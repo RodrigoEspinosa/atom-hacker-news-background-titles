@@ -10,7 +10,13 @@ getItem = (itemId) ->
   request.open 'GET', 'https://hacker-news.firebaseio.com/v0/item/' + itemId + '.json', true
 
   request.onload = (e) ->
+    # Check if the response is OK.
     if (request.readyState == 4 && request.status == 200)
+      # Remove the 'Fetching data from HackerNews' title if still exists.
+      if HackerNewsTitles.get(0).title == LoadingTitle.title
+        HackerNewsTitles.delete(0)
+
+      # Set the just fetched title.
       HackerNewsTitles.set HackerNewsTitles.size, JSON.parse(request.responseText)
 
   request.send null
