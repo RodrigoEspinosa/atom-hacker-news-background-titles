@@ -1,7 +1,7 @@
 {
   "name": "hacker-news-background-titles",
   "main": "./lib/background-titles",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "description": "Displays HackerNews titles in the background when there are no editors open.",
   "repository": "https://github.com/RodrigoEspinosa/atom-hacker-news-background-titles",
